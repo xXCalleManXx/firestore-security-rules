@@ -1,0 +1,15 @@
+export type DataType =
+  'bool'
+  | 'byes'
+  | 'constraint'
+  | 'duration'
+  | 'float'
+  | 'int'
+  | 'int'
+  | 'latlng'
+  | 'list'
+  | 'number'
+  | 'map'
+  | 'string'
+  | 'timestamp'
+  | 'path';
