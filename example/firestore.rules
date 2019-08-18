@@ -1,0 +1,38 @@
+service cloud.firestore {
+  match /databases/{database}/documents {
+    
+    function isAdmin() {
+    	return userRoleId().data.name == "admin";
+    }
+    
+    function currentUser() {
+    	return get(/databases/$(database)/documents/users/request.auth.uid);
+    }
+    
+    function userRoleId() {
+    	return currentUser().data.role;
+    }
+    
+
+    match /users/{userId} {
+		allow get: if userId == request.auth.uid;
+		allow write: if (request.resource.data.email is string) &&
+						(isAdmin() || request.resource.data.role == resource.data.role) &&
+						(request.resource.data.role is path);
+
+
+    	match /cart/{cartId} {
+			allow get: if userId == request.auth.uid;
+			allow write: if false;
+    	}
+    }
+
+
+
+    match /user-role/{roleId} {
+		allow get: if userRoleId() == request.path;
+		allow write: if (request.resource.data.name is string) &&
+						(isAdmin());
+    }
+  }
+}

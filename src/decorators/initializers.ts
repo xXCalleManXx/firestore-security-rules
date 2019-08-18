@@ -27,7 +27,7 @@ function initModel(className: string) {
   }
 }
 
-function initCanWrite(target: Object | Function, canWrite: string | Callable, propertyKey?: string) {
+function initCanWrite(target: Object | Function, canWrite?: string | Callable, propertyKey?: string) {
   let className = '';
 
   if (typeof target == "function") {

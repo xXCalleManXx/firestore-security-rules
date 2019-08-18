@@ -1,17 +1,17 @@
 {
-  "name": "hostman-rules",
-  "version": "1.0.0",
-  "description": "",
+  "name": "firestore-security-rules",
+  "version": "1.0.1",
+  "description": "Easy to use modelling of firestore security rules",
   "scripts": {
     "ts": "ts-node"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://CalleMan@bitbucket.org/hostmandk/hostman-backend.git"
+    "url": "https://github.com/xXCalleManXx/firestore-security-rules"
   },
-  "author": "",
+  "author": "xXCalleManXx",
   "license": "ISC",
-  "homepage": "https://bitbucket.org/hostmandk/hostman-backend#readme",
+  "homepage": "https://github.com/xXCalleManXx/firestore-security-rules#readme",
   "devDependencies": {
     "@types/node": "^12.0.10",
     "ts-node": "^8.3.0",
